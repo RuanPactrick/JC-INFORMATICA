@@ -23,10 +23,10 @@ function formatPrice(cents) {
 function ProductCard({ product }) {
   return (
     <div className="bg-white rounded-[12px] flex flex-col h-full border border-surface-200 hover:border-brand-purple/20 hover:shadow-card-hover transition-all duration-300 group overflow-hidden">
-      {/* Image Stage: neutral light gray, occupies ~60% visually via aspect ratio */}
-      <div className="relative w-full aspect-square md:aspect-[4/3] bg-[#F8F9FA] flex items-center justify-center p-6">
+      {/* Image Stage: full bleed */}
+      <div className="relative w-full aspect-[4/5] sm:aspect-square bg-gray-50 flex items-center justify-center overflow-hidden">
         {/* Badges */}
-        <div className="absolute top-4 left-4 flex flex-col gap-2 z-10">
+        <div className="absolute top-4 left-4 flex flex-col gap-2 z-20">
           {product.promotion && (
             <span className="bg-brand-magenta text-white text-[10px] uppercase font-bold px-2 py-1 rounded-[4px] tracking-wide shadow-sm">
               Oferta
@@ -40,14 +40,14 @@ function ProductCard({ product }) {
         </div>
 
         {/* Favorite Button */}
-        <button className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-brand-magenta hover:bg-white/90 transition-colors" aria-label="Favoritar">
+        <button className="absolute top-4 right-4 z-20 w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-brand-magenta hover:bg-white/90 transition-colors bg-white/50 backdrop-blur-sm" aria-label="Favoritar">
           <Heart className="w-[18px] h-[18px]" />
         </button>
 
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-contain mix-blend-multiply group-hover:scale-[1.02] transition-transform duration-300"
+          className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500 z-10"
           loading="lazy"
         />
       </div>
