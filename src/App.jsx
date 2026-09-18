@@ -98,22 +98,22 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-surface-50">
       {/* Header Top */}
-      <header className="bg-brand-navy text-white sticky top-0 z-50 shadow-md">
+      <header className="bg-brand-navy text-white sticky top-0 z-50">
         <div className="max-w-container mx-auto px-4 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20 gap-4 md:gap-8">
+          <div className="flex items-center justify-between h-20 md:h-24 gap-6">
             {/* Logo */}
-            <a href="#" className="flex-shrink-0">
-              <img src="/images/brand/logo.jpg" alt="JC Informática" className="h-8 md:h-10 w-auto object-contain rounded" />
+            <a href="#" className="flex-shrink-0 flex items-center">
+              <img src="/images/brand/logo.jpg" alt="JC Informática" className="h-10 md:h-14 w-auto object-contain rounded" />
             </a>
 
             {/* Search Bar - Desktop */}
-            <div className="flex-1 max-w-2xl hidden md:block">
-              <div className="relative group">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within:text-brand-magenta transition-colors" />
+            <div className="flex-1 max-w-2xl hidden md:block px-4">
+              <div className="relative w-full group">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-brand-purple transition-colors" />
                 <input
                   type="text"
                   placeholder="Busque por produtos, marcas ou categorias..."
-                  className="w-full bg-white text-gray-900 rounded-full py-2.5 pl-11 pr-4 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-magenta transition-all shadow-inner placeholder:text-gray-400"
+                  className="w-full bg-white text-gray-900 rounded-lg h-11 pl-12 pr-4 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-purple transition-all shadow-sm placeholder:text-gray-400"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
@@ -121,36 +121,48 @@ function App() {
             </div>
 
             {/* Actions */}
-            <div className="flex items-center gap-5 md:gap-7">
-              <a href="#" className="hidden md:flex flex-col items-center text-gray-300 hover:text-white transition-colors group">
-                <User className="w-5 h-5 mb-1 group-hover:-translate-y-0.5 transition-transform" />
-                <span className="text-[9px] font-bold uppercase tracking-widest opacity-80 group-hover:opacity-100">Minha conta</span>
-              </a>
-              <a href="#" className="hidden md:flex flex-col items-center text-gray-300 hover:text-brand-magenta transition-colors group">
-                <Heart className="w-5 h-5 mb-1 group-hover:-translate-y-0.5 transition-transform" />
-                <span className="text-[9px] font-bold uppercase tracking-widest opacity-80 group-hover:opacity-100">Favoritos</span>
-              </a>
-              <a href="#" className="flex flex-col items-center text-brand-neon hover:text-white transition-colors relative group">
-                <div className="relative">
-                  <ShoppingCart className="w-5 h-5 md:mb-1 group-hover:-translate-y-0.5 transition-transform" />
-                  <span className="absolute -top-1.5 -right-2 bg-brand-magenta text-white text-[9px] font-extrabold w-4 h-4 rounded-full flex items-center justify-center shadow-sm">0</span>
+            <div className="flex items-center gap-6 lg:gap-8 shrink-0">
+              <a href="#" className="hidden lg:flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
+                <User className="w-[22px] h-[22px] group-hover:text-brand-magenta transition-colors" />
+                <div className="text-xs font-bold leading-tight tracking-wide">
+                  <span className="block text-gray-500 font-medium text-[10px] uppercase">Olá, visitante</span>
+                  Minha conta
                 </div>
-                <span className="hidden md:inline text-[9px] font-bold uppercase tracking-widest opacity-90 group-hover:opacity-100">Meu carrinho</span>
               </a>
-              <button className="md:hidden text-white p-2 -mr-2">
+              
+              <a href="#" className="hidden md:flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
+                <Heart className="w-[22px] h-[22px] group-hover:text-brand-magenta transition-colors" />
+                <div className="hidden lg:block text-xs font-bold leading-tight tracking-wide">
+                  <span className="block text-gray-500 font-medium text-[10px] uppercase">Meus</span>
+                  Favoritos
+                </div>
+              </a>
+              
+              <a href="#" className="flex items-center gap-3 text-white hover:text-brand-neon transition-colors group">
+                <div className="relative">
+                  <ShoppingCart className="w-[22px] h-[22px] group-hover:text-brand-neon transition-colors" />
+                  <span className="absolute -top-1.5 -right-2.5 bg-brand-magenta text-white text-[10px] font-extrabold w-[18px] h-[18px] rounded-full flex items-center justify-center ring-2 ring-brand-navy shadow-sm">0</span>
+                </div>
+                <div className="hidden lg:block text-xs font-bold leading-tight tracking-wide">
+                  <span className="block text-brand-neon font-medium text-[10px] uppercase">Meu</span>
+                  Carrinho
+                </div>
+              </a>
+              
+              <button className="md:hidden text-white p-2 -mr-2 hover:text-brand-magenta transition-colors">
                 <Menu className="w-6 h-6" />
               </button>
             </div>
           </div>
           
           {/* Search Bar - Mobile */}
-          <div className="pb-3 md:hidden">
+          <div className="pb-4 md:hidden">
             <div className="relative">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
               <input
                 type="text"
                 placeholder="Busque por produtos..."
-                className="w-full bg-white text-gray-900 rounded-full py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-brand-magenta text-sm font-medium shadow-inner"
+                className="w-full bg-white text-gray-900 rounded-lg h-10 pl-9 pr-4 focus:outline-none focus:ring-2 focus:ring-brand-purple text-sm font-medium shadow-sm"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -162,27 +174,27 @@ function App() {
       {/* Navigation */}
       <nav className="bg-brand-navyLight text-gray-300 hidden md:block border-b border-white/5 relative z-40">
         <div className="max-w-container mx-auto px-4 lg:px-8">
-          <div className="flex items-center justify-between h-12">
-            <div className="flex items-center gap-8">
-              <button className="flex items-center gap-2 text-white text-sm font-extrabold hover:text-brand-magenta transition-colors group">
-                <Menu className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                Todas as categorias
-                <ChevronDown className="w-4 h-4 opacity-70" />
+          <div className="flex items-center h-12">
+            
+            <div className="flex items-center gap-6 lg:gap-8 text-[13px] font-bold tracking-wide flex-1">
+              <button className="flex items-center gap-2 text-white hover:text-brand-magenta transition-colors">
+                <Menu className="w-4 h-4" />
+                DEPARTAMENTOS
+                <ChevronDown className="w-4 h-4 opacity-50 ml-1" />
               </button>
               
-              <div className="flex items-center gap-6 text-[13px] font-bold tracking-wide">
-                {categoriesData.slice(0, 6).map(cat => (
-                  <a key={cat.id} href={`#${cat.id}`} className="hover:text-white transition-colors relative after:absolute after:bottom-[-14px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-magenta hover:after:w-full after:transition-all after:duration-300">
-                    {cat.name}
-                  </a>
-                ))}
-                <a href="#promocoes" className="hover:text-brand-neon transition-colors text-brand-neon">Promoções</a>
-              </div>
+              <div className="h-4 w-px bg-white/10 mx-1"></div>
+
+              {categoriesData.slice(0, 6).map(cat => (
+                <a key={cat.id} href={`#${cat.id}`} className="hover:text-white transition-colors relative after:absolute after:bottom-[-16px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-magenta hover:after:w-full after:transition-all after:duration-300">
+                  {cat.name}
+                </a>
+              ))}
             </div>
 
-            <a href="#ofertas" className="flex items-center gap-1.5 text-brand-neon text-[11px] uppercase tracking-wider font-extrabold border border-brand-neon/30 bg-brand-neon/5 px-3 py-1.5 rounded-full hover:bg-brand-neon/20 hover:border-brand-neon transition-all">
-              <Zap className="w-3.5 h-3.5 fill-brand-neon" />
-              Ofertas especiais
+            <a href="#ofertas" className="flex items-center gap-1.5 text-brand-neon hover:text-white transition-colors text-[13px] font-bold shrink-0 group">
+              <Zap className="w-4 h-4 fill-brand-neon group-hover:fill-white transition-colors" />
+              OFERTAS ESPECIAIS
             </a>
           </div>
         </div>
