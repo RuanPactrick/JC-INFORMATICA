@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
   Search,
   User,
@@ -118,6 +118,70 @@ function CategoryItem({ category }) {
   )
 }
 
+const heroSlides = [
+  {
+    image: "/images/hero/slide-1.png",
+    alt: "Premium Gaming Setup JC Informática",
+    href: "#",
+  }
+]
+
+function HeroCarousel() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  // Autoplay logic - only active if there are multiple slides
+  useEffect(() => {
+    if (heroSlides.length <= 1) return
+
+    const interval = setInterval(() => {
+      setCurrentSlide(prev => (prev + 1) % heroSlides.length)
+    }, 6000)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <section className="relative w-full bg-[#050414] overflow-hidden aspect-[16/10] sm:aspect-[2.2/1] md:aspect-[2.3/1] lg:aspect-[2.4/1] max-h-[440px] md:max-h-[540px]">
+      {heroSlides.map((slide, index) => (
+        <a 
+          key={index}
+          href={slide.href}
+          className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+            index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+          }`}
+          aria-hidden={index !== currentSlide}
+        >
+          <img
+            src={slide.image}
+            alt={slide.alt}
+            className="w-full h-full object-cover object-[center_35%] md:object-[center_45%] lg:object-center"
+            // Preload the first image, lazy load the rest
+            loading={index === 0 ? "eager" : "lazy"}
+          />
+        </a>
+      ))}
+
+      {/* Navigation Controls - only show if multiple slides */}
+      {heroSlides.length > 1 && (
+        <div className="absolute bottom-6 left-0 right-0 z-20 flex justify-center items-center gap-3">
+          {heroSlides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              aria-label={`Go to slide ${index + 1}`}
+              className={`transition-all duration-300 rounded-full ${
+                index === currentSlide 
+                  ? 'w-2.5 h-2.5 bg-brand-purple' 
+                  : 'w-1.5 h-1.5 bg-white/40 hover:bg-white/70'
+              }`}
+            />
+          ))}
+        </div>
+      )}
+    </section>
+  )
+}
+
 function App() {
   const [searchTerm, setSearchTerm] = useState('')
 
@@ -222,45 +286,8 @@ function App() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative bg-[#050414] overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover object-center md:object-[center_35%] opacity-90"
-            poster="/images/products/pc-gamer-core-i5-13400f-32gb-ram-ddr4-rtx-5060-8gb.webp"
-          >
-            <source src="/video_banner.mp4" type="video/mp4" />
-          </video>
-          {/* Minimum overlay for text legibility on the left, letting the right side shine */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050414] via-[#050414]/80 to-transparent w-full md:w-[75%] lg:w-[60%]"></div>
-        </div>
-
-        <div className="relative z-10 max-w-container mx-auto px-4 lg:px-8 py-20 md:py-32 flex flex-col justify-center min-h-[480px] md:min-h-[600px]">
-          <div className="max-w-xl lg:max-w-2xl">
-            <h2 className="text-brand-purple text-[12px] md:text-[14px] font-extrabold tracking-widest uppercase mb-4 drop-shadow-md">
-              {homepageData.hero.eyebrow}
-            </h2>
-            <h1 className="text-4xl md:text-[4.5rem] font-black text-white leading-[1.05] mb-6 tracking-tight drop-shadow-xl">
-              TECNOLOGIA <br className="hidden md:block" />SEM LIMITES
-            </h1>
-            <p className="text-gray-200 text-base md:text-xl mb-10 max-w-[500px] leading-relaxed font-medium drop-shadow-md">
-              Computadores, periféricos, componentes e muito mais para elevar o seu nível. Qualidade, garantia e o melhor atendimento para você.
-            </p>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <a href={homepageData.hero.primaryCta.href} className="bg-brand-purple hover:bg-brand-purpleHover text-white font-extrabold py-4 px-10 rounded-[8px] transition-all transform hover:scale-[1.02] shadow-lg text-[15px] w-full sm:w-auto text-center">
-                {homepageData.hero.primaryCta.label}
-              </a>
-              <a href={homepageData.hero.secondaryCta.href} className="bg-white/5 hover:bg-white/15 text-white border border-white/20 font-bold py-4 px-10 rounded-[8px] transition-all text-[15px] w-full sm:w-auto text-center backdrop-blur-sm">
-                {homepageData.hero.secondaryCta.label}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Carousel */}
+      <HeroCarousel />
 
       <main className="flex-1 py-12 md:py-14">
         {/* Categorias */}
