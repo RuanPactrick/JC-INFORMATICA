@@ -83,26 +83,37 @@ function ProductCard({ product }) {
 }
 
 function CategoryItem({ category }) {
-  return (
-    <a href={`#${category.id}`} className="group relative w-[75vw] sm:w-auto shrink-0 snap-start rounded-[16px] overflow-hidden border border-gray-200 hover:border-brand-purple/30 hover:shadow-card-hover transition-all duration-300 aspect-[4/3] cursor-pointer block">
-      
-      {/* Background Image */}
-      <img
-        src={category.image}
-        alt={category.name}
-        className="absolute inset-0 w-full h-full object-cover object-[center_55%] group-hover:scale-[1.03] transition-transform duration-500 ease-out"
-        loading="lazy"
-      />
+  // Specific object positioning tweaks for vertical posters to center the product inside the circle
+  const getObjectPosition = (id) => {
+    switch (id) {
+      case 'gabinetes': return 'object-[center_30%]'
+      case 'pc-gamer': return 'object-[center_40%]'
+      case 'colecionaveis': return 'object-[center_30%]'
+      default: return 'object-center'
+    }
+  }
 
-      {/* Gradient Overlay for Text Readability */}
-      <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-[#050414]/90 via-[#050414]/30 to-transparent pointer-events-none transition-opacity duration-300 group-hover:opacity-100"></div>
+  return (
+    <a href={`#${category.id}`} className="group flex flex-col items-center gap-3 w-[88px] sm:w-[115px] shrink-0 cursor-pointer snap-start">
+      
+      {/* Circular Image Container */}
+      <div className="w-[88px] h-[88px] sm:w-[112px] sm:h-[112px] rounded-full overflow-hidden bg-brand-purple flex items-center justify-center relative shadow-sm transition-transform duration-300 ease-out group-hover:scale-[1.03]">
+        
+        <img
+          src={category.image}
+          alt={category.name}
+          className={`w-full h-full object-cover ${getObjectPosition(category.id)}`}
+          loading="lazy"
+        />
+        
+        {/* Subtle inner ring to separate the circle from white background */}
+        <div className="absolute inset-0 rounded-full border border-black/5 pointer-events-none"></div>
+      </div>
 
       {/* Category Label */}
-      <div className="absolute bottom-0 left-0 p-5 w-full flex items-end">
-        <h3 className="text-white text-[18px] md:text-[20px] font-extrabold tracking-tight leading-tight drop-shadow-md group-hover:text-white transition-colors">
-          {category.name}
-        </h3>
-      </div>
+      <span className="text-[12px] sm:text-[14px] font-semibold text-gray-800 text-center leading-tight group-hover:text-brand-purple transition-colors">
+        {category.name}
+      </span>
     </a>
   )
 }
@@ -293,17 +304,18 @@ function App() {
 
       <main className="flex-1 py-12 md:py-14">
         {/* Categorias */}
-        <section className="max-w-container mx-auto px-4 lg:px-8 mb-14 md:mb-16">
-          <div className="flex items-end justify-between mb-6 md:mb-8">
+        <section className="max-w-container mx-auto px-4 lg:px-8 mb-12 md:mb-16">
+          <div className="flex items-end justify-between mb-5 md:mb-7">
             <div>
-              <h2 className="text-2xl md:text-[28px] font-extrabold text-[#0B0A1A] mb-1 tracking-tight">Compre por Categoria</h2>
+              <h2 className="text-2xl md:text-[28px] font-extrabold text-[#0B0A1A] mb-1 tracking-tight">Categorias</h2>
+              <p className="text-[13px] md:text-sm text-gray-500 font-medium mt-1">Encontre exatamente o que você precisa para o seu setup.</p>
             </div>
             <a href="#categorias" className="hidden md:block text-brand-purple font-bold text-[14px] hover:text-brand-purpleHover transition-colors">
               Ver todas
             </a>
           </div>
 
-          <div className="flex sm:grid overflow-x-auto sm:overflow-visible gap-4 sm:gap-5 md:gap-6 pb-6 sm:pb-0 pt-1 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-hide snap-x sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="flex overflow-x-auto gap-4 md:gap-7 lg:justify-between pb-6 pt-2 -mx-4 px-4 lg:mx-0 lg:px-0 scrollbar-hide snap-x">
             {categoriesData.map(cat => (
                <CategoryItem key={cat.id} category={cat} />
             ))}
