@@ -4,55 +4,55 @@
     "name": "PC Gamer",
     "count": 6,
     "representativeProductId": "pc-gamer-core-i5-13400f-32gb-ram-ddr4-rtx-5060-8gb",
-    "image": "/images/products/pc-gamer-core-i5-13400f-32gb-ram-ddr4-rtx-5060-8gb.webp"
+    "image": "/images/categorias/pc gamer.png"
   },
   {
     "id": "placas-de-video",
     "name": "Placas de vídeo",
     "count": 8,
     "representativeProductId": "placa-de-video-msi-geforce-rtx-5060-ti-8gb-shadow-2x-oc-plus",
-    "image": "/images/products/placa-de-video-msi-geforce-rtx-5060-ti-8gb-shadow-2x-oc-plus.webp"
+    "image": "/images/categorias/placa de video.png"
   },
   {
     "id": "processadores",
     "name": "Processadores",
     "count": 6,
     "representativeProductId": "processador-amd-ryzen-7-9800x3d",
-    "image": "/images/products/processador-amd-ryzen-7-9800x3d.webp"
+    "image": "/images/categorias/processador.png"
   },
   {
     "id": "kit-upgrade",
     "name": "Kit Upgrade",
     "count": 1,
     "representativeProductId": "kit-upgrade-ryzen-5-5500-b450m-asus-tuf-32gb-ram-brasilpc-3-200mhz",
-    "image": "/images/products/kit-upgrade-ryzen-5-5500-b450m-asus-tuf-32gb-ram-brasilpc-3-200mhz.webp"
+    "image": "/images/categorias/kit upgrade.png"
   },
   {
     "id": "gabinetes",
     "name": "Gabinetes",
     "count": 18,
     "representativeProductId": "gabinete-acegeek-nebula-pro",
-    "image": "/images/products/gabinete-acegeek-nebula-pro.webp"
+    "image": "/images/categorias/gabinete.png"
   },
   {
     "id": "perifericos",
     "name": "Periféricos",
     "count": 1,
     "representativeProductId": "controle-gamesir-t4-novalite-sem-fio",
-    "image": "/images/products/controle-gamesir-t4-novalite-sem-fio.webp"
+    "image": "/images/categorias/controle.png"
   },
   {
     "id": "tvs-e-monitores",
     "name": "TVs e Monitores",
     "count": 1,
     "representativeProductId": "televisao-smart-tv-32-pol-hd-samsung-h5000f",
-    "image": "/images/products/televisao-smart-tv-32-pol-hd-samsung-h5000f.webp"
+    "image": "/images/categorias/televisão.png"
   },
   {
     "id": "colecionaveis",
     "name": "Colecionáveis",
     "count": 1,
     "representativeProductId": "action-figure-denji",
-    "image": "/images/products/action-figure-denji.webp"
+    "image": "/images/categorias/action figure.png"
   }
 ]
