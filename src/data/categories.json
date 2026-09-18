@@ -4,55 +4,55 @@
     "name": "PC Gamer",
     "count": 6,
     "representativeProductId": "pc-gamer-core-i5-13400f-32gb-ram-ddr4-rtx-5060-8gb",
-    "image": "/images/categorias/pc gamer.png"
+    "image": "https://res.cloudinary.com/xmx80w2s/image/upload/v1789698501/pc_gamer.png"
   },
   {
     "id": "placas-de-video",
     "name": "Placas de vídeo",
     "count": 8,
     "representativeProductId": "placa-de-video-msi-geforce-rtx-5060-ti-8gb-shadow-2x-oc-plus",
-    "image": "/images/categorias/placa de video.png"
+    "image": "https://res.cloudinary.com/xmx80w2s/image/upload/v1789698506/placa_de_video.png"
   },
   {
     "id": "processadores",
     "name": "Processadores",
     "count": 6,
     "representativeProductId": "processador-amd-ryzen-7-9800x3d",
-    "image": "/images/categorias/processador.png"
+    "image": "https://res.cloudinary.com/xmx80w2s/image/upload/v1789698505/processador.png"
   },
   {
     "id": "kit-upgrade",
     "name": "Kit Upgrade",
     "count": 1,
     "representativeProductId": "kit-upgrade-ryzen-5-5500-b450m-asus-tuf-32gb-ram-brasilpc-3-200mhz",
-    "image": "/images/categorias/kit upgrade.png"
+    "image": "https://res.cloudinary.com/xmx80w2s/image/upload/v1789698501/kit_upgrade.png"
   },
   {
     "id": "gabinetes",
     "name": "Gabinetes",
     "count": 18,
     "representativeProductId": "gabinete-acegeek-nebula-pro",
-    "image": "/images/categorias/gabinete.png"
+    "image": "https://res.cloudinary.com/xmx80w2s/image/upload/v1789698501/gabinete.png"
   },
   {
     "id": "perifericos",
     "name": "Periféricos",
     "count": 1,
     "representativeProductId": "controle-gamesir-t4-novalite-sem-fio",
-    "image": "/images/categorias/controle.png"
+    "image": "https://res.cloudinary.com/xmx80w2s/image/upload/v1789698501/controle.png"
   },
   {
     "id": "tvs-e-monitores",
     "name": "TVs e Monitores",
     "count": 1,
     "representativeProductId": "televisao-smart-tv-32-pol-hd-samsung-h5000f",
-    "image": "/images/categorias/televisão.png"
+    "image": "https://res.cloudinary.com/xmx80w2s/image/upload/v1789698501/televis%C3%A3o.png"
   },
   {
     "id": "colecionaveis",
     "name": "Colecionáveis",
     "count": 1,
     "representativeProductId": "action-figure-denji",
-    "image": "/images/categorias/action figure.png"
+    "image": "https://res.cloudinary.com/xmx80w2s/image/upload/v1789698502/action_figure.png"
   }
 ]
