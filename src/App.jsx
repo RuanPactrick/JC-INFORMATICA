@@ -84,16 +84,25 @@ function ProductCard({ product }) {
 
 function CategoryItem({ category }) {
   return (
-    <a href={`#${category.id}`} className="flex flex-col items-center justify-center gap-3 bg-white border border-surface-200 rounded-[12px] p-4 w-[120px] md:w-[140px] aspect-square hover:shadow-card-hover hover:border-brand-purple/20 transition-all group shrink-0 cursor-pointer">
-      <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
+    <a href={`#${category.id}`} className="flex flex-col items-center justify-between bg-gradient-to-b from-[#0A0A14] to-[#161622] border border-gray-800 rounded-[16px] p-4 md:p-5 w-[140px] md:w-[170px] h-[150px] md:h-[180px] hover:border-brand-purple/50 hover:shadow-[0_8px_24px_rgba(96,2,238,0.15)] transition-all duration-300 group shrink-0 relative overflow-hidden cursor-pointer">
+      
+      {/* Subtle top inner glow for a premium hardware feel */}
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+      {/* Very subtle background accent */}
+      <div className="absolute inset-0 bg-brand-purple/0 group-hover:bg-brand-purple/5 transition-colors duration-300"></div>
+
+      {/* Image Area - visually dominant */}
+      <div className="relative z-10 flex-1 w-full flex items-center justify-center mb-1">
         <img
           src={category.image}
           alt={category.name}
-          className="w-full h-full object-contain mix-blend-multiply group-hover:scale-[1.03] transition-transform duration-300"
+          className="w-[85%] h-[85%] object-contain drop-shadow-[0_10px_15px_rgba(0,0,0,0.3)] group-hover:scale-[1.06] transition-transform duration-300"
           loading="lazy"
         />
       </div>
-      <span className="text-[12px] md:text-[13px] font-bold text-gray-800 text-center leading-tight group-hover:text-brand-purple transition-colors">
+
+      <span className="relative z-10 text-[13px] md:text-[14px] font-bold text-gray-200 text-center leading-tight group-hover:text-white transition-colors tracking-wide">
         {category.name}
       </span>
     </a>
@@ -296,7 +305,7 @@ function App() {
             </a>
           </div>
 
-          <div className="flex overflow-x-auto gap-4 md:gap-5 pb-4 scrollbar-hide snap-x">
+          <div className="flex overflow-x-auto gap-4 md:gap-5 pb-8 pt-2 -mx-4 px-4 lg:mx-0 lg:px-0 scrollbar-hide snap-x">
             {categoriesData.map(cat => (
               <div className="snap-start shrink-0" key={cat.id}>
                  <CategoryItem category={cat} />
