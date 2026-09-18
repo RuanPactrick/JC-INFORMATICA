@@ -201,106 +201,66 @@ function App() {
       </header>
 
       {/* Navigation */}
-      <nav className="bg-brand-navyLight text-gray-300 hidden md:block border-b border-white/5">
+      <nav className="bg-brand-navy text-gray-300 hidden md:block border-t border-white/5">
         <div className="max-w-container mx-auto px-4 lg:px-8">
-          <div className="flex items-center h-12">
-            <div className="flex items-center gap-6 lg:gap-8 text-[14px] font-bold tracking-wide flex-1">
-              <button className="flex items-center gap-2 text-white hover:text-brand-magenta transition-colors">
+          <div className="flex items-center h-[52px]">
+            <div className="flex items-center gap-6 lg:gap-8 text-[13px] font-bold tracking-wide">
+              <button className="flex items-center gap-2 text-white hover:text-brand-purple transition-colors">
                 <Menu className="w-4 h-4" />
-                Departamentos
-                <ChevronDown className="w-4 h-4 opacity-50" />
+                Todos os Departamentos
               </button>
               
               <div className="h-4 w-px bg-white/10 mx-1"></div>
 
-              {categoriesData.slice(0, 6).map(cat => (
+              {categoriesData.slice(0, 8).map(cat => (
                 <a key={cat.id} href={`#${cat.id}`} className="hover:text-white transition-colors">
                   {cat.name}
                 </a>
               ))}
             </div>
-
-            <a href="#ofertas" className="flex items-center text-brand-magenta hover:text-white transition-colors text-[14px] font-bold shrink-0">
-              Ofertas Especiais
-            </a>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative bg-brand-navy overflow-hidden">
+      <section className="relative bg-[#050414] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <video
             autoPlay
             muted
             loop
             playsInline
-            className="w-full h-full object-cover object-center md:object-right opacity-[0.60] mix-blend-screen"
+            className="w-full h-full object-cover object-center md:object-[center_35%] opacity-90"
             poster="/images/products/pc-gamer-core-i5-13400f-32gb-ram-ddr4-rtx-5060-8gb.webp"
           >
             <source src="/video_banner.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/90 to-transparent"></div>
+          {/* Minimum overlay for text legibility on the left, letting the right side shine */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050414] via-[#050414]/80 to-transparent w-full md:w-[75%] lg:w-[60%]"></div>
         </div>
 
-        <div className="relative z-10 max-w-container mx-auto px-4 lg:px-8 py-16 md:py-20 flex flex-col justify-center min-h-[400px] md:min-h-[500px]">
-          <div className="max-w-2xl">
-            <h2 className="text-brand-neon text-[11px] md:text-[13px] font-extrabold tracking-widest uppercase mb-4">
+        <div className="relative z-10 max-w-container mx-auto px-4 lg:px-8 py-20 md:py-32 flex flex-col justify-center min-h-[480px] md:min-h-[600px]">
+          <div className="max-w-xl lg:max-w-2xl">
+            <h2 className="text-brand-purple text-[12px] md:text-[14px] font-extrabold tracking-widest uppercase mb-4 drop-shadow-md">
               {homepageData.hero.eyebrow}
             </h2>
-            <h1 className="text-4xl md:text-[3.5rem] font-extrabold text-white leading-[1.1] mb-5 tracking-tight">
-              TECNOLOGIA SEM LIMITES
+            <h1 className="text-4xl md:text-[4.5rem] font-black text-white leading-[1.05] mb-6 tracking-tight drop-shadow-xl">
+              TECNOLOGIA <br className="hidden md:block" />SEM LIMITES
             </h1>
-            <p className="text-gray-300 text-base md:text-lg mb-8 max-w-lg leading-relaxed font-medium">
-              {homepageData.hero.description}
+            <p className="text-gray-200 text-base md:text-xl mb-10 max-w-[500px] leading-relaxed font-medium drop-shadow-md">
+              Computadores, periféricos, componentes e muito mais para elevar o seu nível. Qualidade, garantia e o melhor atendimento para você.
             </p>
-            <div className="flex flex-wrap items-center gap-4">
-              <a href={homepageData.hero.primaryCta.href} className="bg-brand-purple hover:bg-brand-purpleHover text-white font-extrabold py-3.5 px-8 rounded-[8px] transition-colors text-sm">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <a href={homepageData.hero.primaryCta.href} className="bg-brand-purple hover:bg-brand-purpleHover text-white font-extrabold py-4 px-10 rounded-[8px] transition-all transform hover:scale-[1.02] shadow-lg text-[15px] w-full sm:w-auto text-center">
                 {homepageData.hero.primaryCta.label}
               </a>
-              <a href={homepageData.hero.secondaryCta.href} className="bg-white/5 hover:bg-white/10 text-white border border-white/10 font-bold py-3.5 px-8 rounded-[8px] transition-colors text-sm">
+              <a href={homepageData.hero.secondaryCta.href} className="bg-white/5 hover:bg-white/15 text-white border border-white/20 font-bold py-4 px-10 rounded-[8px] transition-all text-[15px] w-full sm:w-auto text-center backdrop-blur-sm">
                 {homepageData.hero.secondaryCta.label}
               </a>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Trust/Benefits Bar */}
-      <div className="bg-white border-b border-surface-200">
-        <div className="max-w-container mx-auto px-4 lg:px-8 py-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-gray-800">
-            <div className="flex items-center gap-4">
-              <Truck className="w-7 h-7 text-brand-purple shrink-0" />
-              <div>
-                <div className="text-[13px] md:text-sm font-bold tracking-tight">Entrega Brasil</div>
-                <div className="text-[11px] md:text-xs text-gray-500 font-medium">Rastreamento real</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <ShieldCheck className="w-7 h-7 text-brand-purple shrink-0" />
-              <div>
-                <div className="text-[13px] md:text-sm font-bold tracking-tight">Compra segura</div>
-                <div className="text-[11px] md:text-xs text-gray-500 font-medium">Ambiente protegido</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <Headset className="w-7 h-7 text-brand-purple shrink-0" />
-              <div>
-                <div className="text-[13px] md:text-sm font-bold tracking-tight">Suporte 24/7</div>
-                <div className="text-[11px] md:text-xs text-gray-500 font-medium">Especializado</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <CreditCard className="w-7 h-7 text-brand-purple shrink-0" />
-              <div>
-                <div className="text-[13px] md:text-sm font-bold tracking-tight">Até 12x</div>
-                <div className="text-[11px] md:text-xs text-gray-500 font-medium">No cartão</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <main className="flex-1 py-12 md:py-14">
         {/* Categorias */}
