@@ -36,7 +36,7 @@ export default {
         '3xl': '1.5rem',
       },
       maxWidth: {
-        'container': '1440px',
+        'container': '1360px',
       }
     },
   },

@@ -22,42 +22,57 @@ function formatPrice(cents) {
 
 function ProductCard({ product }) {
   return (
-    <div className="bg-white rounded-[16px] flex flex-col h-full border border-surface-200 hover:shadow-card-hover transition-shadow group overflow-hidden">
-      {/* Image Stage: neutral light gray, occupies 60-65% visually via aspect ratio */}
-      <div className="relative w-full aspect-[4/3] bg-surface-50 flex items-center justify-center p-6 md:p-8 border-b border-surface-100">
-        {product.promotion && (
-          <div className="absolute top-3 left-3 bg-brand-magenta text-white text-[10px] uppercase font-bold px-2 py-0.5 rounded tracking-wide z-10">
-            Oferta
-          </div>
-        )}
+    <div className="bg-white rounded-[12px] flex flex-col h-full border border-surface-200 hover:border-brand-purple/20 hover:shadow-card-hover transition-all duration-300 group overflow-hidden">
+      {/* Image Stage: neutral light gray, occupies ~60% visually via aspect ratio */}
+      <div className="relative w-full aspect-square md:aspect-[4/3] bg-[#F8F9FA] flex items-center justify-center p-6">
+        {/* Badges */}
+        <div className="absolute top-4 left-4 flex flex-col gap-2 z-10">
+          {product.promotion && (
+            <span className="bg-brand-magenta text-white text-[10px] uppercase font-bold px-2 py-1 rounded-[4px] tracking-wide shadow-sm">
+              Oferta
+            </span>
+          )}
+          {product.isNew && (
+            <span className="bg-brand-neon text-brand-navy text-[10px] uppercase font-bold px-2 py-1 rounded-[4px] tracking-wide shadow-sm">
+              Lançamento
+            </span>
+          )}
+        </div>
+
+        {/* Favorite Button */}
+        <button className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-brand-magenta hover:bg-white/90 transition-colors" aria-label="Favoritar">
+          <Heart className="w-[18px] h-[18px]" />
+        </button>
+
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-contain mix-blend-multiply group-hover:scale-[1.03] transition-transform duration-300"
+          className="w-full h-full object-contain mix-blend-multiply group-hover:scale-[1.02] transition-transform duration-300"
           loading="lazy"
         />
       </div>
 
       {/* Info Area */}
-      <div className="p-5 md:p-6 flex flex-col flex-1">
-        <h3 className="text-gray-900 font-semibold text-[14px] leading-[1.35] line-clamp-2 mb-4">
+      <div className="p-4 md:p-5 flex flex-col flex-1">
+        <h3 className="text-[#1C1C28] font-semibold text-[13px] md:text-[14px] leading-[1.35] line-clamp-2 min-h-[2.7em] mb-4">
           {product.name}
         </h3>
 
         <div className="mt-auto">
           <div className="flex items-baseline gap-1">
-            <span className="text-[24px] md:text-[28px] font-extrabold text-gray-900 tracking-tight leading-none">
+            <span className="text-[24px] md:text-[26px] font-extrabold text-[#0B0A1A] tracking-tight leading-none">
               {formatPrice(product.priceCents)}
             </span>
+            <span className="text-[11px] text-gray-500 font-medium ml-1">à vista</span>
           </div>
 
-          {product.installment && (
-            <div className="text-[12px] md:text-[13px] text-gray-500 font-medium mt-1.5 mb-5">
-              ou {product.installment.count}x de {formatPrice(product.installment.amountCents)}
-            </div>
-          )}
+          <div className="text-[11px] md:text-[12px] text-gray-500 font-medium mt-1.5 mb-5 h-[18px]">
+            {product.installment ? (
+              <>ou {product.installment.count}x de {formatPrice(product.installment.amountCents)}</>
+            ) : null}
+          </div>
 
-          <button className="w-full bg-brand-purple hover:bg-brand-purpleHover text-white font-bold h-11 rounded-[8px] flex items-center justify-center gap-2 text-[14px] transition-colors">
+          <button className="w-full bg-brand-purple hover:bg-brand-purpleHover text-white font-bold h-10 rounded-[6px] flex items-center justify-center gap-2 text-[13px] transition-colors focus:ring-2 focus:ring-brand-purple focus:ring-offset-2">
             <ShoppingCart className="w-4 h-4" />
             Comprar
           </button>
@@ -69,16 +84,16 @@ function ProductCard({ product }) {
 
 function CategoryItem({ category }) {
   return (
-    <a href={`#${category.id}`} className="flex flex-col items-center justify-center gap-4 bg-white border border-surface-200 rounded-[12px] p-4 w-[130px] md:w-[150px] aspect-square hover:shadow-card-hover hover:border-brand-purple/30 transition-all group shrink-0 cursor-pointer">
-      <div className="w-14 h-14 md:w-[72px] md:h-[72px] flex items-center justify-center">
+    <a href={`#${category.id}`} className="flex flex-col items-center justify-center gap-3 bg-white border border-surface-200 rounded-[12px] p-4 w-[120px] md:w-[140px] aspect-square hover:shadow-card-hover hover:border-brand-purple/20 transition-all group shrink-0 cursor-pointer">
+      <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
         <img
           src={category.image}
           alt={category.name}
-          className="w-full h-full object-contain mix-blend-multiply group-hover:scale-[1.05] transition-transform duration-300"
+          className="w-full h-full object-contain mix-blend-multiply group-hover:scale-[1.03] transition-transform duration-300"
           loading="lazy"
         />
       </div>
-      <span className="text-[13px] font-bold text-gray-800 text-center leading-tight group-hover:text-brand-purple transition-colors">
+      <span className="text-[12px] md:text-[13px] font-bold text-gray-800 text-center leading-tight group-hover:text-brand-purple transition-colors">
         {category.name}
       </span>
     </a>
@@ -269,37 +284,19 @@ function App() {
         </div>
       </div>
 
-      <main className="flex-1 py-14">
-        {/* Produtos em destaque */}
-        <section className="max-w-container mx-auto px-4 lg:px-8 mb-14">
-          <div className="flex items-end justify-between mb-6">
+      <main className="flex-1 py-12 md:py-14">
+        {/* Categorias (moved up for better rhythm) */}
+        <section className="max-w-container mx-auto px-4 lg:px-8 mb-14 md:mb-16">
+          <div className="flex items-end justify-between mb-5 md:mb-6">
             <div>
-              <h2 className="text-2xl md:text-[28px] font-extrabold text-gray-900 mb-1 tracking-tight">Produtos em destaque</h2>
+              <h2 className="text-2xl md:text-[28px] font-extrabold text-[#0B0A1A] mb-1 tracking-tight">Compre por Categoria</h2>
             </div>
-            <a href="#destaques" className="hidden md:block text-brand-purple font-bold text-sm hover:text-brand-purpleHover transition-colors">
-              Ver todos
-            </a>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredProducts.slice(0,4).map(product => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </section>
-
-        {/* Categorias */}
-        <section className="max-w-container mx-auto px-4 lg:px-8 mb-14">
-          <div className="flex items-end justify-between mb-6">
-            <div>
-              <h2 className="text-2xl md:text-[28px] font-extrabold text-gray-900 mb-1 tracking-tight">Compre por Categoria</h2>
-            </div>
-            <a href="#categorias" className="hidden md:block text-brand-purple font-bold text-sm hover:text-brand-purpleHover transition-colors">
+            <a href="#categorias" className="hidden md:block text-brand-purple font-bold text-[14px] hover:text-brand-purpleHover transition-colors">
               Ver todas
             </a>
           </div>
 
-          <div className="flex overflow-x-auto gap-4 md:gap-6 pb-4 scrollbar-hide snap-x">
+          <div className="flex overflow-x-auto gap-4 md:gap-5 pb-4 scrollbar-hide snap-x">
             {categoriesData.map(cat => (
               <div className="snap-start shrink-0" key={cat.id}>
                  <CategoryItem category={cat} />
@@ -308,15 +305,34 @@ function App() {
           </div>
         </section>
 
+        {/* Produtos em destaque */}
+        <section className="max-w-container mx-auto px-4 lg:px-8 mb-14 md:mb-16">
+          <div className="flex items-end justify-between mb-5 md:mb-6">
+            <div>
+              <h2 className="text-2xl md:text-[28px] font-extrabold text-[#0B0A1A] mb-1 tracking-tight">Produtos em destaque</h2>
+              <p className="text-[13px] md:text-sm text-gray-500 font-medium mt-1">Nossa seleção especial para você.</p>
+            </div>
+            <a href="#destaques" className="hidden md:block text-brand-purple font-bold text-[14px] hover:text-brand-purpleHover transition-colors">
+              Ver todos
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6">
+            {featuredProducts.slice(0,4).map(product => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </section>
+
         {/* Produtos (Catálogo geral) */}
         <section className="max-w-container mx-auto px-4 lg:px-8 mb-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-4">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-5 md:mb-6 gap-4">
             <div>
-              <h2 className="text-2xl md:text-[28px] font-extrabold text-gray-900 mb-1 tracking-tight">Lançamentos</h2>
+              <h2 className="text-2xl md:text-[28px] font-extrabold text-[#0B0A1A] mb-1 tracking-tight">Catálogo</h2>
             </div>
             <div className="flex items-center gap-3 shrink-0">
               <label htmlFor="sort" className="text-[13px] font-semibold text-gray-600">Ordenar:</label>
-              <select id="sort" className="bg-white border border-surface-200 text-gray-900 text-sm rounded-[8px] focus:ring-2 focus:ring-brand-purple focus:border-brand-purple block py-2 px-3 font-semibold outline-none cursor-pointer">
+              <select id="sort" className="bg-white border border-surface-200 text-gray-900 text-[13px] rounded-[6px] focus:ring-2 focus:ring-brand-purple focus:border-brand-purple block py-1.5 px-3 font-semibold outline-none cursor-pointer">
                 <option defaultValue>Mais recentes</option>
                 <option value="price-asc">Menor preço</option>
                 <option value="price-desc">Maior preço</option>
@@ -325,7 +341,7 @@ function App() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6">
             {allProducts.map(product => (
               <ProductCard key={product.id} product={product} />
             ))}
