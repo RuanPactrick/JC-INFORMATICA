@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # JC Informática — starter de dados do novo site
 
 Este pacote foi gerado a partir do catálogo Vendizap capturado em 2026-09-17T21:59:42.411Z.
@@ -40,3 +41,7 @@ novo-site/
 
 ## Observação importante
 O catálogo ainda contém URLs de imagens de produto vistas no DOM que não foram associadas a um card com nome/preço. Isso não bloqueia a primeira versão do site; o conjunto normalizado já é suficiente para construir a homepage e as primeiras categorias.
+=======
+# JC-INFORM-TICA
+a
+>>>>>>> aab03fd4c7e90ad30dcec0886ecc00039c690b7c
