@@ -84,27 +84,25 @@ function ProductCard({ product }) {
 
 function CategoryItem({ category }) {
   return (
-    <a href={`#${category.id}`} className="flex flex-col items-center justify-between bg-gradient-to-b from-[#0A0A14] to-[#161622] border border-gray-800 rounded-[16px] p-4 md:p-5 w-[140px] md:w-[170px] h-[150px] md:h-[180px] hover:border-brand-purple/50 hover:shadow-[0_8px_24px_rgba(96,2,238,0.15)] transition-all duration-300 group shrink-0 relative overflow-hidden cursor-pointer">
+    <a href={`#${category.id}`} className="group relative w-[75vw] sm:w-auto shrink-0 snap-start rounded-[16px] overflow-hidden border border-gray-200 hover:border-brand-purple/30 hover:shadow-card-hover transition-all duration-300 aspect-[4/3] cursor-pointer block">
       
-      {/* Subtle top inner glow for a premium hardware feel */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+      {/* Background Image */}
+      <img
+        src={category.image}
+        alt={category.name}
+        className="absolute inset-0 w-full h-full object-cover object-[center_55%] group-hover:scale-[1.03] transition-transform duration-500 ease-out"
+        loading="lazy"
+      />
 
-      {/* Very subtle background accent */}
-      <div className="absolute inset-0 bg-brand-purple/0 group-hover:bg-brand-purple/5 transition-colors duration-300"></div>
+      {/* Gradient Overlay for Text Readability */}
+      <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-[#050414]/90 via-[#050414]/30 to-transparent pointer-events-none transition-opacity duration-300 group-hover:opacity-100"></div>
 
-      {/* Image Area - visually dominant */}
-      <div className="relative z-10 flex-1 w-full flex items-center justify-center mb-1">
-        <img
-          src={category.image}
-          alt={category.name}
-          className="w-[85%] h-[85%] object-contain drop-shadow-[0_10px_15px_rgba(0,0,0,0.3)] group-hover:scale-[1.06] transition-transform duration-300"
-          loading="lazy"
-        />
+      {/* Category Label */}
+      <div className="absolute bottom-0 left-0 p-5 w-full flex items-end">
+        <h3 className="text-white text-[18px] md:text-[20px] font-extrabold tracking-tight leading-tight drop-shadow-md group-hover:text-white transition-colors">
+          {category.name}
+        </h3>
       </div>
-
-      <span className="relative z-10 text-[13px] md:text-[14px] font-bold text-gray-200 text-center leading-tight group-hover:text-white transition-colors tracking-wide">
-        {category.name}
-      </span>
     </a>
   )
 }
@@ -294,9 +292,9 @@ function App() {
       </div>
 
       <main className="flex-1 py-12 md:py-14">
-        {/* Categorias (moved up for better rhythm) */}
+        {/* Categorias */}
         <section className="max-w-container mx-auto px-4 lg:px-8 mb-14 md:mb-16">
-          <div className="flex items-end justify-between mb-5 md:mb-6">
+          <div className="flex items-end justify-between mb-6 md:mb-8">
             <div>
               <h2 className="text-2xl md:text-[28px] font-extrabold text-[#0B0A1A] mb-1 tracking-tight">Compre por Categoria</h2>
             </div>
@@ -305,11 +303,9 @@ function App() {
             </a>
           </div>
 
-          <div className="flex overflow-x-auto gap-4 md:gap-5 pb-8 pt-2 -mx-4 px-4 lg:mx-0 lg:px-0 scrollbar-hide snap-x">
+          <div className="flex sm:grid overflow-x-auto sm:overflow-visible gap-4 sm:gap-5 md:gap-6 pb-6 sm:pb-0 pt-1 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-hide snap-x sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {categoriesData.map(cat => (
-              <div className="snap-start shrink-0" key={cat.id}>
-                 <CategoryItem category={cat} />
-              </div>
+               <CategoryItem key={cat.id} category={cat} />
             ))}
           </div>
         </section>
