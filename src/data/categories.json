@@ -4,14 +4,14 @@
     "name": "PC Gamer",
     "count": 6,
     "representativeProductId": "pc-gamer-core-i5-13400f-32gb-ram-ddr4-rtx-5060-8gb",
-    "image": "/images/categorias/pc gamer.png"
+    "image": "/images/categorias/pc%20gamer.png"
   },
   {
     "id": "placas-de-video",
     "name": "Placas de vídeo",
     "count": 8,
     "representativeProductId": "placa-de-video-msi-geforce-rtx-5060-ti-8gb-shadow-2x-oc-plus",
-    "image": "/images/categorias/placa de video.png"
+    "image": "/images/categorias/placa%20de%20video.png"
   },
   {
     "id": "processadores",
@@ -25,7 +25,7 @@
     "name": "Kit Upgrade",
     "count": 1,
     "representativeProductId": "kit-upgrade-ryzen-5-5500-b450m-asus-tuf-32gb-ram-brasilpc-3-200mhz",
-    "image": "/images/categorias/kit upgrade.png"
+    "image": "/images/categorias/kit%20upgrade.png"
   },
   {
     "id": "gabinetes",
@@ -46,13 +46,13 @@
     "name": "TVs e Monitores",
     "count": 1,
     "representativeProductId": "televisao-smart-tv-32-pol-hd-samsung-h5000f",
-    "image": "/images/categorias/televisão.png"
+    "image": "/images/categorias/televis%C3%A3o.png"
   },
   {
     "id": "colecionaveis",
     "name": "Colecionáveis",
     "count": 1,
     "representativeProductId": "action-figure-denji",
-    "image": "/images/categorias/action figure.png"
+    "image": "/images/categorias/action%20figure.png"
   }
 ]
