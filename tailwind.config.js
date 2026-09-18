@@ -8,16 +8,36 @@ export default {
     extend: {
       colors: {
         brand: {
-          dark: '#0B0A1A',
+          dark: '#05050A',
+          navy: '#0A0A14',
+          navyLight: '#12121D',
           purple: '#6002EE',
           purpleHover: '#4B01BB',
           magenta: '#E040FB',
           neon: '#00E5FF',
+          violet: '#9C27B0',
+        },
+        surface: {
+          50: '#F8F9FA',
+          100: '#F1F3F5',
+          200: '#E9ECEF',
         }
       },
       fontFamily: {
         sans: ['Manrope', 'sans-serif'],
       },
+      boxShadow: {
+        'card': '0 4px 20px rgba(0, 0, 0, 0.05)',
+        'card-hover': '0 10px 30px rgba(0, 0, 0, 0.1)',
+        'premium': '0 20px 40px -10px rgba(96, 2, 238, 0.15)',
+      },
+      borderRadius: {
+        '2xl': '1rem',
+        '3xl': '1.5rem',
+      },
+      maxWidth: {
+        'container': '1280px',
+      }
     },
   },
   plugins: [],
