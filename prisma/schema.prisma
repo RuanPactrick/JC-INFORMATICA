@@ -1,0 +1,82 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Category {
+  id        String    @id @default(uuid())
+  name      String
+  slug      String    @unique
+  image     String?
+  active    Boolean   @default(true)
+  order     Int       @default(0)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  products  Product[]
+}
+
+model Product {
+  id            String    @id @default(uuid())
+  name          String
+  slug          String    @unique
+  priceCents    Int
+  description   String?
+  image         String?
+  promotion     Boolean   @default(false)
+  isNew         Boolean   @default(false)
+  
+  // JSON array of image strings
+  images        String?   
+  
+  // Installments logic (could be JSON or simple fields)
+  installmentCount  Int?
+  installmentAmount Int?
+
+  status        String    @default("DRAFT") // DRAFT, REVIEW, PUBLISHED, ARCHIVED
+  
+  categoryId    String?
+  category      Category? @relation(fields: [categoryId], references: [id])
+  
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model CarouselSlide {
+  id          String   @id @default(uuid())
+  image       String
+  mobileImage String?
+  link        String?
+  eyebrow     String?
+  titleLine1  String?
+  titleLine2  String?
+  description String?
+  active      Boolean  @default(true)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model HomepageSection {
+  id        String   @id @default(uuid())
+  type      String   // e.g. "CATEGORIES", "FEATURED_PRODUCTS", "HERO"
+  title     String?
+  subtitle  String?
+  active    Boolean  @default(true)
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
