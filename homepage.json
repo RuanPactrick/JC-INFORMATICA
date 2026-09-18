@@ -1,0 +1,40 @@
+{
+  "hero": {
+    "eyebrow": "PERFORMANCE, UPGRADE E TECNOLOGIA",
+    "title": "Seu próximo upgrade começa aqui.",
+    "description": "Hardware, periféricos, computadores e seminovos com garantia. Aceitamos seu usado na troca.",
+    "primaryCta": {
+      "label": "Ver ofertas",
+      "href": "#ofertas"
+    },
+    "secondaryCta": {
+      "label": "Avaliar meu usado",
+      "href": "#troca"
+    }
+  },
+  "featuredProductIds": [
+    "pc-gamer-core-i5-13400f-32gb-ram-ddr4-rtx-5060-8gb",
+    "placa-de-video-msi-geforce-rtx-5060-ti-8gb-shadow-2x-oc-plus",
+    "processador-amd-ryzen-7-9800x3d",
+    "kit-upgrade-ryzen-5-5500-b450m-asus-tuf-32gb-ram-brasilpc-3-200mhz",
+    "processador-amd-ryzen-5-7600x",
+    "placa-de-video-msi-geforce-rtx-3050-ventus-oc-2x",
+    "gabinete-acegeek-nebula-pro",
+    "controle-gamesir-t4-novalite-sem-fio"
+  ],
+  "categoryIds": [
+    "pc-gamer",
+    "placas-de-video",
+    "processadores",
+    "kit-upgrade",
+    "gabinetes",
+    "perifericos",
+    "tvs-e-monitores",
+    "colecionaveis"
+  ],
+  "notes": [
+    "Não publicar avaliações fictícias por produto.",
+    "A promoção da RX 6900 XT detectada no catálogo expirava em 17/09/2026; validar antes de exibir o preço promocional.",
+    "Priorizar produtos de informática na primeira dobra e nos destaques."
+  ]
+}

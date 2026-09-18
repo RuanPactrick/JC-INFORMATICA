@@ -1,0 +1,212 @@
+[
+  {
+    "productId": "processador-amd-ryzen-5-1600-6-core-12-threads-3-2ghz-3-4ghz-turbo",
+    "source": "downloaded/products/001-semi-novo-processador-amd-ryzen-5-1600-6-core-12-threads-3-2ghz-3-4ghz-turbo-01-95988d55.webp",
+    "destination": "public/images/products/processador-amd-ryzen-5-1600-6-core-12-threads-3-2ghz-3-4ghz-turbo.webp"
+  },
+  {
+    "productId": "controle-gamesir-t4-novalite-sem-fio",
+    "source": "downloaded/products/002-controle-gamesir-t4-novalite-sem-fio-01-c79155f0.webp",
+    "destination": "public/images/products/controle-gamesir-t4-novalite-sem-fio.webp"
+  },
+  {
+    "productId": "televisao-smart-tv-32-pol-hd-samsung-h5000f",
+    "source": "downloaded/products/003-televisao-smart-tv-32-pol-hd-samsung-h5000f-01-e565dcc4.webp",
+    "destination": "public/images/products/televisao-smart-tv-32-pol-hd-samsung-h5000f.webp"
+  },
+  {
+    "productId": "action-figure-denji",
+    "source": "downloaded/products/004-action-figure-denji-01-600ff59e.webp",
+    "destination": "public/images/products/action-figure-denji.webp"
+  },
+  {
+    "productId": "gabinete-gamer-rise-mode-galaxy-glass-mid-tower-atx-lateral-e-frontal-em-vidro-temperado-sem-fans-rosa",
+    "source": "downloaded/products/005-gabinete-gamer-rise-mode-galaxy-glass-mid-tower-atx-lateral-e-frontal-em-vidro-t-01-9241d834.webp",
+    "destination": "public/images/products/gabinete-gamer-rise-mode-galaxy-glass-mid-tower-atx-lateral-e-frontal-em-vidro-temperado-sem-fans-rosa.webp"
+  },
+  {
+    "productId": "gabinete-acegeek-arcane",
+    "source": "downloaded/products/006-gabinete-acegeek-arcane-01-d436f6ee.webp",
+    "destination": "public/images/products/gabinete-acegeek-arcane.webp"
+  },
+  {
+    "productId": "gabinete-acegeek-nebula-pro",
+    "source": "downloaded/products/007-gabinete-acegeek-nebula-pro-01-f13ff392.webp",
+    "destination": "public/images/products/gabinete-acegeek-nebula-pro.webp"
+  },
+  {
+    "productId": "gabinete-aigo-darkflash-dpw90m",
+    "source": "downloaded/products/008-gabinete-aigo-darkflash-dpw90m-01-bf15002d.webp",
+    "destination": "public/images/products/gabinete-aigo-darkflash-dpw90m.webp"
+  },
+  {
+    "productId": "gabinete-aigo-darkflash-ds900",
+    "source": "downloaded/products/009-gabinete-aigo-darkflash-ds900-01-dd6cb698.webp",
+    "destination": "public/images/products/gabinete-aigo-darkflash-ds900.webp"
+  },
+  {
+    "productId": "gabinete-aigo-darkflash-ds900w",
+    "source": "downloaded/products/010-gabinete-aigo-darkflash-ds900w-01-33dfdae5.webp",
+    "destination": "public/images/products/gabinete-aigo-darkflash-ds900w.webp"
+  },
+  {
+    "productId": "gabinete-aigo-darkflash-th285m",
+    "source": "downloaded/products/011-gabinete-aigo-darkflash-th285m-01-0c7ce517.webp",
+    "destination": "public/images/products/gabinete-aigo-darkflash-th285m.webp"
+  },
+  {
+    "productId": "gabinete-gamer-mancer-cv550-branco",
+    "source": "downloaded/products/012-gabinete-gamer-mancer-cv550-branco-01-23f0146f.webp",
+    "destination": "public/images/products/gabinete-gamer-mancer-cv550-branco.webp"
+  },
+  {
+    "productId": "gabinete-gamer-mancer-ward-v3",
+    "source": "downloaded/products/013-gabinete-gamer-mancer-ward-v3-01-a15b4acb.webp",
+    "destination": "public/images/products/gabinete-gamer-mancer-ward-v3.webp"
+  },
+  {
+    "productId": "gabinete-gamer-ninja-tessen",
+    "source": "downloaded/products/014-gabinete-gamer-ninja-tessen-01-b97c8fb4.webp",
+    "destination": "public/images/products/gabinete-gamer-ninja-tessen.webp"
+  },
+  {
+    "productId": "gabinete-gamer-rise-mode-x5-glass",
+    "source": "downloaded/products/015-gabinete-gamer-rise-mode-x5-glass-01-0167c53f.webp",
+    "destination": "public/images/products/gabinete-gamer-rise-mode-x5-glass.webp"
+  },
+  {
+    "productId": "gabinete-mancer-cv100",
+    "source": "downloaded/products/016-gabinete-mancer-cv100-01-4bcc7a42.webp",
+    "destination": "public/images/products/gabinete-mancer-cv100.webp"
+  },
+  {
+    "productId": "gabinete-mancer-cv300",
+    "source": "downloaded/products/017-gabinete-mancer-cv300-01-f15d03a9.webp",
+    "destination": "public/images/products/gabinete-mancer-cv300.webp"
+  },
+  {
+    "productId": "gabinete-mancer-cv500l",
+    "source": "downloaded/products/018-gabinete-mancer-cv500l-01-57583e3b.webp",
+    "destination": "public/images/products/gabinete-mancer-cv500l.webp"
+  },
+  {
+    "productId": "gabinete-pichau-atom",
+    "source": "downloaded/products/019-gabinete-pichau-atom-01-e52f494e.webp",
+    "destination": "public/images/products/gabinete-pichau-atom.webp"
+  },
+  {
+    "productId": "gabinete-pichau-atom-x",
+    "source": "downloaded/products/020-gabinete-pichau-atom-x-01-54f912af.webp",
+    "destination": "public/images/products/gabinete-pichau-atom-x.webp"
+  },
+  {
+    "productId": "gabinete-pichau-pouter-3-assassin-s-creed-mirage",
+    "source": "downloaded/products/021-gabinete-pichau-pouter-3-assassin-s-creed-mirage-01-9b5338d4.webp",
+    "destination": "public/images/products/gabinete-pichau-pouter-3-assassin-s-creed-mirage.webp"
+  },
+  {
+    "productId": "gabinete-rise-mode-galaxy-glass-standard-v2",
+    "source": "downloaded/products/022-gabinete-rise-mode-galaxy-glass-standard-v2-01-39d69dda.webp",
+    "destination": "public/images/products/gabinete-rise-mode-galaxy-glass-standard-v2.webp"
+  },
+  {
+    "productId": "pc-gamer-core-i5-13400f-32gb-ram-ddr4-rtx-5060-8gb",
+    "source": "downloaded/products/023-pc-gamer-core-i5-13400f-32gb-ram-ddr4-rtx-5060-8gb-01-933285ac.webp",
+    "destination": "public/images/products/pc-gamer-core-i5-13400f-32gb-ram-ddr4-rtx-5060-8gb.webp"
+  },
+  {
+    "productId": "pc-gamer-core-i7-11700-16gb-ram-ddr4-3-600mhz-rtx-3070-8gb",
+    "source": "downloaded/products/024-pc-gamer-core-i7-11700-16gb-ram-ddr4-3-600mhz-rtx-3070-8gb-01-2effe929.webp",
+    "destination": "public/images/products/pc-gamer-core-i7-11700-16gb-ram-ddr4-3-600mhz-rtx-3070-8gb.webp"
+  },
+  {
+    "productId": "pc-gamer-ryzen-5-5500-16gb-ram-rtx-3060-12gb",
+    "source": "downloaded/products/025-pc-gamer-ryzen-5-5500-16gb-ram-rtx-3060-12gb-01-86283099.webp",
+    "destination": "public/images/products/pc-gamer-ryzen-5-5500-16gb-ram-rtx-3060-12gb.webp"
+  },
+  {
+    "productId": "pc-gamer-ryzen-5-5600x-32gb-ram-ddr4-rtx-3070-8gb",
+    "source": "downloaded/products/026-pc-gamer-ryzen-5-5600x-32gb-ram-ddr4-rtx-3070-8gb-01-60db88c4.webp",
+    "destination": "public/images/products/pc-gamer-ryzen-5-5600x-32gb-ram-ddr4-rtx-3070-8gb.webp"
+  },
+  {
+    "productId": "pc-gamer-ryzen-7-5700-16gb-ram-ddr4-rx-7600-8gb",
+    "source": "downloaded/products/027-pc-gamer-ryzen-7-5700-16gb-ram-ddr4-rx-7600-8gb-01-7cf1c346.webp",
+    "destination": "public/images/products/pc-gamer-ryzen-7-5700-16gb-ram-ddr4-rx-7600-8gb.webp"
+  },
+  {
+    "productId": "pc-gamer-ryzen-7-5700x-b550m-aorus-elite-32gb-ram-ddr4-rtx-3080-10g",
+    "source": "downloaded/products/028-pc-gamer-ryzen-7-5700x-b550m-aorus-elite-32gb-ram-ddr4-rtx-3080-10g-01-f375653b.webp",
+    "destination": "public/images/products/pc-gamer-ryzen-7-5700x-b550m-aorus-elite-32gb-ram-ddr4-rtx-3080-10g.webp"
+  },
+  {
+    "productId": "placa-de-video-asrock-rx-9070-xt-taichi-oc-amd-radeon",
+    "source": "downloaded/products/030-placa-de-video-asrock-rx-9070-xt-taichi-oc-amd-radeon-01-0d5c4a37.webp",
+    "destination": "public/images/products/placa-de-video-asrock-rx-9070-xt-taichi-oc-amd-radeon.webp"
+  },
+  {
+    "productId": "placa-de-video-galax-nvidia-geforce-rtx-5050-1-click-oc-8gb",
+    "source": "downloaded/products/031-placa-de-video-galax-nvidia-geforce-rtx-5050-1-click-oc-8gb-01-395087d9.webp",
+    "destination": "public/images/products/placa-de-video-galax-nvidia-geforce-rtx-5050-1-click-oc-8gb.webp"
+  },
+  {
+    "productId": "placa-de-video-inno3d-geforce-rtx-5050-twin-x2-8gb",
+    "source": "downloaded/products/032-placa-de-video-inno3d-geforce-rtx-5050-twin-x2-8gb-01-58216eca.webp",
+    "destination": "public/images/products/placa-de-video-inno3d-geforce-rtx-5050-twin-x2-8gb.webp"
+  },
+  {
+    "productId": "placa-de-video-inno3d-nvidia-geforce-rtx-5060-twin-x2",
+    "source": "downloaded/products/033-placa-de-video-inno3d-nvidia-geforce-rtx-5060-twin-x2-01-21934817.webp",
+    "destination": "public/images/products/placa-de-video-inno3d-nvidia-geforce-rtx-5060-twin-x2.webp"
+  },
+  {
+    "productId": "placa-de-video-msi-geforce-rtx-3050-ventus-oc-2x",
+    "source": "downloaded/products/034-placa-de-video-msi-geforce-rtx-3050-ventus-oc-2x-01-3ac7dae8.webp",
+    "destination": "public/images/products/placa-de-video-msi-geforce-rtx-3050-ventus-oc-2x.webp"
+  },
+  {
+    "productId": "placa-de-video-msi-geforce-rtx-5060-ti-8gb-shadow-2x-oc-plus",
+    "source": "downloaded/products/035-placa-de-video-msi-geforce-rtx-5060-ti-8gb-shadow-2x-oc-plus-01-20b3d06d.webp",
+    "destination": "public/images/products/placa-de-video-msi-geforce-rtx-5060-ti-8gb-shadow-2x-oc-plus.webp"
+  },
+  {
+    "productId": "placa-de-video-msi-rtx-3050-lp-oc-nvidia-geforce-6gb",
+    "source": "downloaded/products/036-placa-de-video-msi-rtx-3050-lp-oc-nvidia-geforce-6gb-01-801f01f6.webp",
+    "destination": "public/images/products/placa-de-video-msi-rtx-3050-lp-oc-nvidia-geforce-6gb.webp"
+  },
+  {
+    "productId": "placa-de-video-powercolor-red-devil-radeon-rx-6900-xt-16gb",
+    "source": "downloaded/products/037-placa-de-video-powercolor-red-devil-radeon-rx-6900-xt-16gb-01-798cd8fc.webp",
+    "destination": "public/images/products/placa-de-video-powercolor-red-devil-radeon-rx-6900-xt-16gb.webp"
+  },
+  {
+    "productId": "processador-amd-ryzen-5-7600x",
+    "source": "downloaded/products/038-processador-amd-ryzen-5-7600x-01-4e804a75.webp",
+    "destination": "public/images/products/processador-amd-ryzen-5-7600x.webp"
+  },
+  {
+    "productId": "processador-amd-ryzen-7-5700g-vega-oem",
+    "source": "downloaded/products/039-processador-amd-ryzen-7-5700g-vega-oem-01-712ba70b.webp",
+    "destination": "public/images/products/processador-amd-ryzen-7-5700g-vega-oem.webp"
+  },
+  {
+    "productId": "processador-amd-ryzen-7-5700x",
+    "source": "downloaded/products/040-processador-amd-ryzen-7-5700x-01-ed23f640.webp",
+    "destination": "public/images/products/processador-amd-ryzen-7-5700x.webp"
+  },
+  {
+    "productId": "processador-amd-ryzen-7-9800x3d",
+    "source": "downloaded/products/041-processador-amd-ryzen-7-9800x3d-01-96640324.webp",
+    "destination": "public/images/products/processador-amd-ryzen-7-9800x3d.webp"
+  },
+  {
+    "productId": "processador-amd-ryzen-3-3200g-4-core-4-threads-3-6ghz-4ghz-turbo",
+    "source": "downloaded/products/042-novo-processador-amd-ryzen-3-3200g-4-core-4-threads-3-6ghz-4ghz-turbo-01-94b9f924.webp",
+    "destination": "public/images/products/processador-amd-ryzen-3-3200g-4-core-4-threads-3-6ghz-4ghz-turbo.webp"
+  },
+  {
+    "productId": "kit-upgrade-ryzen-5-5500-b450m-asus-tuf-32gb-ram-brasilpc-3-200mhz",
+    "source": "downloaded/products/043-kit-upgrade-ryzen-5-5500-b450m-asus-tuf-32gb-ram-brasilpc-3-200mhz-01-44ec64c3.webp",
+    "destination": "public/images/products/kit-upgrade-ryzen-5-5500-b450m-asus-tuf-32gb-ram-brasilpc-3-200mhz.webp"
+  }
+]
