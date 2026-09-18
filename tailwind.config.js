@@ -27,8 +27,8 @@ export default {
         sans: ['Manrope', 'sans-serif'],
       },
       boxShadow: {
-        'card': '0 4px 20px rgba(0, 0, 0, 0.05)',
-        'card-hover': '0 10px 30px rgba(0, 0, 0, 0.1)',
+        'card': '0 2px 10px rgba(0, 0, 0, 0.04)',
+        'card-hover': '0 8px 24px rgba(0, 0, 0, 0.08)',
         'premium': '0 20px 40px -10px rgba(96, 2, 238, 0.15)',
       },
       borderRadius: {
@@ -36,7 +36,7 @@ export default {
         '3xl': '1.5rem',
       },
       maxWidth: {
-        'container': '1280px',
+        'container': '1440px',
       }
     },
   },
