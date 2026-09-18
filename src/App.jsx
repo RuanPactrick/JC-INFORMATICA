@@ -123,6 +123,10 @@ const heroSlides = [
     image: "/images/hero/slide-1.png",
     alt: "Premium Gaming Setup JC Informática",
     href: "#",
+    eyebrow: "PARA O SEU SETUP",
+    titleLine1: "Tecnologia",
+    titleLine2: "para seu setup",
+    description: "Computadores, periféricos e componentes com qualidade e garantia."
   }
 ]
 
@@ -141,44 +145,81 @@ function HeroCarousel() {
   }, [])
 
   return (
-    <section className="relative w-full bg-[#050414] overflow-hidden aspect-[16/10] sm:aspect-[2.2/1] md:aspect-[2.3/1] lg:aspect-[2.4/1] max-h-[440px] md:max-h-[540px]">
-      {heroSlides.map((slide, index) => (
-        <a 
-          key={index}
-          href={slide.href}
-          className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-            index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
-          }`}
-          aria-hidden={index !== currentSlide}
-        >
-          <img
-            src={slide.image}
-            alt={slide.alt}
-            className="w-full h-full object-cover object-[center_35%] md:object-[center_45%] lg:object-center"
-            // Preload the first image, lazy load the rest
-            loading={index === 0 ? "eager" : "lazy"}
-          />
-        </a>
-      ))}
-
-      {/* Navigation Controls - only show if multiple slides */}
-      {heroSlides.length > 1 && (
-        <div className="absolute bottom-6 left-0 right-0 z-20 flex justify-center items-center gap-3">
-          {heroSlides.map((_, index) => (
-            <button
+    <div className="w-full bg-[#050414]">
+      <section className="relative w-full max-w-[1920px] mx-auto bg-[#050414] overflow-hidden flex items-center">
+        {/* We use a taller aspect ratio on mobile, and a clean wide aspect on desktop without cropping too aggressively. */}
+        <div className="w-full relative aspect-[4/3] sm:aspect-video md:aspect-[21/9] lg:aspect-[2.2/1] max-h-[600px]">
+          {heroSlides.map((slide, index) => (
+            <div 
               key={index}
-              onClick={() => setCurrentSlide(index)}
-              aria-label={`Go to slide ${index + 1}`}
-              className={`transition-all duration-300 rounded-full ${
-                index === currentSlide 
-                  ? 'w-2.5 h-2.5 bg-brand-purple' 
-                  : 'w-1.5 h-1.5 bg-white/40 hover:bg-white/70'
+              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
               }`}
-            />
+              aria-hidden={index !== currentSlide}
+            >
+              {/* Image */}
+              <img
+                src={slide.image}
+                alt={slide.alt}
+                className="w-full h-full object-cover object-[center_35%] md:object-center"
+                loading={index === 0 ? "eager" : "lazy"}
+              />
+              
+              {/* Subtle elegant gradient JUST behind the text for readability. 
+                  We fade it out before the middle so it doesn't darken the PC and Monitor. */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0B0A1A]/95 via-[#0B0A1A]/70 to-transparent w-full md:w-[65%] lg:w-[50%]"></div>
+
+              {/* Text Overlay matching the exact mockup */}
+              <div className="absolute inset-0 flex items-center">
+                <div className="max-w-container mx-auto px-4 lg:px-8 w-full">
+                  <div className="max-w-lg">
+                    {slide.eyebrow && (
+                      <h2 className="text-brand-purple text-[11px] md:text-[13px] font-extrabold tracking-widest uppercase mb-3 md:mb-4 drop-shadow-md">
+                        {slide.eyebrow}
+                      </h2>
+                    )}
+                    {slide.titleLine1 && (
+                      <h1 className="text-[2.5rem] md:text-[4rem] font-bold text-white leading-[1.05] mb-4 md:mb-6 tracking-tight drop-shadow-lg">
+                        {slide.titleLine1} <br/>
+                        {slide.titleLine2 && <span className="font-medium text-gray-300">{slide.titleLine2}</span>}
+                      </h1>
+                    )}
+                    {slide.description && (
+                      <p className="text-gray-300 text-[15px] md:text-lg max-w-[400px] md:max-w-[460px] leading-relaxed font-medium drop-shadow-md">
+                        {slide.description}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </div>
+              
+              {/* Make it clickable if there's a link */}
+              {slide.href && (
+                <a href={slide.href} className="absolute inset-0 z-20" aria-label={slide.alt}></a>
+              )}
+            </div>
           ))}
+
+          {/* Navigation Controls - only show if multiple slides */}
+          {heroSlides.length > 1 && (
+            <div className="absolute bottom-6 left-0 right-0 z-30 flex justify-center items-center gap-3">
+              {heroSlides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                  className={`transition-all duration-300 rounded-full ${
+                    index === currentSlide 
+                      ? 'w-2.5 h-2.5 bg-brand-purple' 
+                      : 'w-1.5 h-1.5 bg-white/40 hover:bg-white/70'
+                  }`}
+                />
+              ))}
+            </div>
+          )}
         </div>
-      )}
-    </section>
+      </section>
+    </div>
   )
 }
 
