@@ -118,15 +118,9 @@ export default function AdminLayout() {
           </div>
 
           <div className="flex items-center gap-4">
-            {isLocal ? (
-              <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                ● Servidor Local Ativo (SQLite)
-              </span>
-            ) : (
-              <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200">
-                ☁️ Vercel (Modo Visualização)
-              </span>
-            )}
+            <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+              ● Banco Conectado (Neon PostgreSQL)
+            </span>
           </div>
         </header>
 

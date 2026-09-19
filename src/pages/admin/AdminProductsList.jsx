@@ -81,6 +81,7 @@ export default function AdminProductsList() {
             setProducts(prods)
             setCategories(cats)
             liveSuccess = true
+            setIsDemoMode(false)
           }
         } catch {
           // Response wasn't JSON
