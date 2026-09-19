@@ -11,6 +11,9 @@ import {
   TrendingUp
 } from 'lucide-react'
 
+import categoriesData from '../../data/categories.json'
+import productsData from '../../data/products.json'
+
 export default function AdminDashboard() {
   const [stats, setStats] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -21,10 +24,23 @@ export default function AdminDashboard() {
         const res = await fetch('/api/admin/stats')
         if (res.ok) {
           const data = await res.json()
-          setStats(data)
+          if (data && typeof data.publishedCount === 'number') {
+            setStats(data)
+            return
+          }
         }
+        throw new Error('API offline')
       } catch (err) {
-        console.error('Falha ao carregar métricas:', err)
+        // Fallback for Vercel preview when cloud DB is not yet linked
+        setStats({
+          publishedCount: productsData.length,
+          reviewCount: 0,
+          draftCount: 0,
+          archivedCount: 0,
+          totalProducts: productsData.length,
+          categoriesCount: categoriesData.length,
+          isDemo: true
+        })
       } finally {
         setLoading(false)
       }

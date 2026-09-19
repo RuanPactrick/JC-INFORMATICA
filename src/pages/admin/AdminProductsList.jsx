@@ -16,6 +16,9 @@ import {
   AlertCircle
 } from 'lucide-react'
 
+import categoriesData from '../../data/categories.json'
+import productsData from '../../data/products.json'
+
 function formatPrice(cents) {
   if (cents == null) return 'R$ 0,00'
   return (cents / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
@@ -49,6 +52,7 @@ export default function AdminProductsList() {
   const [products, setProducts] = useState([])
   const [categories, setCategories] = useState([])
   const [loading, setLoading] = useState(true)
+  const [isDemoMode, setIsDemoMode] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
   const [statusFilter, setStatusFilter] = useState('ALL')
   const [categoryFilter, setCategoryFilter] = useState('ALL')
@@ -68,17 +72,45 @@ export default function AdminProductsList() {
         fetch('/api/admin/categories')
       ])
 
-      if (prodsRes.ok) {
-        const data = await prodsRes.json()
-        setProducts(data)
+      let liveSuccess = false
+      if (prodsRes.ok && catsRes.ok) {
+        try {
+          const prods = await prodsRes.json()
+          const cats = await catsRes.json()
+          if (Array.isArray(prods) && Array.isArray(cats)) {
+            setProducts(prods)
+            setCategories(cats)
+            liveSuccess = true
+          }
+        } catch {
+          // Response wasn't JSON
+        }
       }
-      if (catsRes.ok) {
-        const cats = await catsRes.json()
-        setCategories(cats)
+
+      if (!liveSuccess) {
+        setIsDemoMode(true)
+        let filtered = productsData.map(p => ({
+          ...p,
+          status: p.status || 'PUBLISHED',
+          category: categoriesData.find(c => c.id === p.category) || null,
+          installmentCount: p.installmentCount || p.installment?.count || 12,
+          installmentAmount: p.installmentAmount || p.installment?.amountCents || Math.round(p.priceCents / 12)
+        }))
+        if (statusFilter !== 'ALL') filtered = filtered.filter(p => p.status === statusFilter)
+        if (categoryFilter !== 'ALL') filtered = filtered.filter(p => (p.category?.id === categoryFilter || p.category === categoryFilter))
+        if (searchTerm) filtered = filtered.filter(p => p.name.toLowerCase().includes(searchTerm.toLowerCase()))
+        setProducts(filtered)
+        setCategories(categoriesData)
       }
     } catch (err) {
       console.error('Erro ao buscar produtos:', err)
-      showFeedback('Erro ao conectar com a API de produtos.', 'error')
+      setIsDemoMode(true)
+      setProducts(productsData.map(p => ({
+        ...p,
+        status: 'PUBLISHED',
+        category: categoriesData.find(c => c.id === p.category) || null
+      })))
+      setCategories(categoriesData)
     } finally {
       setLoading(false)
     }
@@ -171,6 +203,19 @@ export default function AdminProductsList() {
           </Link>
         </div>
       </div>
+
+      {/* Demo Mode Notice if running on Vercel without cloud DB */}
+      {isDemoMode && (
+        <div className="bg-amber-50 border border-amber-200 p-4 rounded-xl flex items-start gap-3 text-amber-900 text-sm shadow-sm">
+          <AlertCircle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+          <div className="flex-1">
+            <span className="font-bold block">Aviso: Acesso pelo Vercel (Modo Visualização)</span>
+            <p className="text-xs text-amber-800 mt-0.5 leading-relaxed">
+              O catálogo abaixo está em modo de leitura a partir dos dados do projeto. Para criar, editar e excluir produtos no banco de dados SQLite persistente, inicie o projeto no seu computador com <code className="bg-amber-100/80 px-1.5 py-0.5 rounded font-mono font-bold text-amber-900">npm run dev</code> e acesse <code className="bg-amber-100/80 px-1.5 py-0.5 rounded font-mono font-bold text-amber-900">http://localhost:5173/admin</code>.
+            </p>
+          </div>
+        </div>
+      )}
 
       {/* Feedback Toast */}
       {feedbackMessage && (
@@ -413,3 +458,4 @@ export default function AdminProductsList() {
     </div>
   )
 }
+

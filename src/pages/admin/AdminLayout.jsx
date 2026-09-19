@@ -9,6 +9,8 @@ import {
 } from 'lucide-react'
 
 export default function AdminLayout() {
+  const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+
   return (
     <div className="min-h-screen bg-[#F8F9FB] flex flex-col md:flex-row font-sans">
       {/* Sidebar */}
@@ -116,9 +118,15 @@ export default function AdminLayout() {
           </div>
 
           <div className="flex items-center gap-4">
-            <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
-              ● Sistema Conectado (SQLite)
-            </span>
+            {isLocal ? (
+              <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                ● Servidor Local Ativo (SQLite)
+              </span>
+            ) : (
+              <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+                ☁️ Vercel (Modo Visualização)
+              </span>
+            )}
           </div>
         </header>
 
